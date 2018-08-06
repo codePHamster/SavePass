@@ -9,7 +9,8 @@ import java.util.List;
 public class SavePass {
 /*
  * Function Name: generateDatabase
- * Function Prototype: public static
+ * Function Prototype: public static HashMap<String,List<String>>
+ * generateDatabase 
  * Description: returns hashmap of entries 
  * Parameters: file in which all accounts are stored 
  * Side Effects: TODO
@@ -17,6 +18,29 @@ public class SavePass {
  * Return Value: hashmap of entries
  */
   public static HashMap<String,List<String>> generateDatabase (){
+    String fileName = "database.txt";
+    //reading one line at a time
+    String line = null;
+
+    try {
+      FileReader fileReader = new FileReader (fileName);
+      BufferedReader bufferedReader = new BufferedReader (fileReader);
+
+      //reading 
+      while ((line = bufferedReader.readLine() != null){
+        //TODO parse data
+
+        //close 
+        bufferedReader.close();
+      }
+      
+    }
+    catch (FileNotFoundException exc){
+      System.err.println ("Unable to open file " + fileName);
+    }
+    catch (IOException exc){
+      System.err.println ("Error reading file " + fileName);
+    }
     
     //create a hash of entries
     HashMap<String,List<String>> entryHash = new HashMap<>();
@@ -133,9 +157,11 @@ public class SavePass {
           saveEntry();
           break;
         case 2: //request to display an entry
+          //TODO check if file exists
           //TODO displayEntry();
           break;
         case 3:
+          //TODO check if file exists
           //TODO displayAllEntry();
           break;
         case 4: //exit program

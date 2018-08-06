@@ -1,0 +1,8 @@
+App: Facebook
+Username: kimpham107@gmail.com
+Password: Facebook96
+
+App: Google
+Username: kimpham107@gmail.com
+Password: Google96
+
